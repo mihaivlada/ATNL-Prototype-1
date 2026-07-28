@@ -1,26 +1,53 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject player;
-    public float speed = 5.0f;
-    public InputAction action;
+    private Vector2 input;
+    private Rigidbody rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        action.Enable();
+        //action.Enable();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 input = action.ReadValue<Vector2>();
-        Vector3 movement = new Vector3(input.x, 0, input.y) * speed * Time.deltaTime;
-        player.transform.Translate(movement, Space.World);
-        
-        
+        input.x = Input.GetAxisRaw("Horizontal");
+        input.y = Input.GetAxisRaw("Vertical");
+    }
+
+    private void FixedUpdate()
+    {
+        // Aici punem codul care se executa la un interval fix de timp, indiferent de framerate (de exemplu, calculele fizice)
+        // Default FixedUpdate interval is 0.02 seconds (50 times per second)
+
+        Vector3 movement = new Vector3(input.x, 0, input.y).normalized * Helper.playerSpeed * Time.fixedDeltaTime;
+
+        rb.MovePosition(rb.position + movement);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Aici e frame-ul in care s-a realizat coliziunea
+        if (collision.gameObject.CompareTag("Tree"))
+        {
+            Debug.Log("Player collided with a tree!");
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        // Aici sunt frame-urile in care ramane lipit de obiectul cu care a colizionat
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        // Aici e frame-ul in care s-a terminat coliziunea
     }
 }
