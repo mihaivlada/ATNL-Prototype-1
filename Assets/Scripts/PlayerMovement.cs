@@ -2,11 +2,24 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject player;
     private Vector2 input;
     private Rigidbody rb;
+
+    [SerializeField] private AudioClip footstepClip;
+    private AudioSource audioSource;
+
+    [SerializeField] private float stepInterval = 0.4f;
+    private float stepTimer;
+
+    // Awake is called when the script instance is being loaded
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +33,22 @@ public class PlayerMovement : MonoBehaviour
     {
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
+
+        bool isMoving = input.sqrMagnitude > 0.01f;
+
+        if (!isMoving)
+        {
+            stepTimer = 0;
+            return;
+        }
+
+        stepTimer += Time.deltaTime;
+
+        if (stepTimer >= stepInterval)
+        {
+            stepTimer = 0f;
+            audioSource.PlayOneShot(footstepClip);
+        }
     }
 
     private void FixedUpdate()
