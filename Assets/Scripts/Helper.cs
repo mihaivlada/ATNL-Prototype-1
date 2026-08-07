@@ -5,4 +5,5 @@ using UnityEngine;
 public static class Helper
 {
     public static float playerSpeed = 5f;
+    public static bool isPaused = false;
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 215148937679dee46bd62b9f87787699
+guid: 72b2aaae533cfc34e9ef5d74adfd8c94
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1892596777460273530
-    second: dog-good_0
+      213: 1036593228136060727
+    second: varma_sprite1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dog-good_0
+      name: varma_sprite1_0
       rect:
         serializedVersion: 2
-        x: 55
-        y: 51
-        width: 530
-        height: 540
+        x: 46
+        y: 0
+        width: 142
+        height: 235
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a71919fddbad34a10800000000000000
-      internalID: 1892596777460273530
+      spriteID: 73710a38c08b26e00800000000000000
+      internalID: 1036593228136060727
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dog-good_0: 1892596777460273530
+      varma_sprite1_0: 1036593228136060727
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
