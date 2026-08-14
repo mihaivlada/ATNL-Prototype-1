@@ -25,6 +25,24 @@ public class CameraMovement : MonoBehaviour
         // player = GameObject.FindWithTag("Player");
     }
 
+    [SerializeField] private GameObject pausePanel;    
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
+    }
+
+    public void TogglePause()
+    {
+        Helper.isPaused = !Helper.isPaused;
+
+        pausePanel.SetActive(Helper.isPaused);
+        Time.timeScale = Helper.isPaused ? 0f : 1f;
+    }
+
     void LateUpdate()
     {
         leftOffset = deadZoneWidth / 2f;

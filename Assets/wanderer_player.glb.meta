@@ -1,7 +1,74 @@
 fileFormatVersion: 2
 guid: c9efdfdf09dfd324b97f844546ec0af6
-DefaultImporter:
+ScriptedImporter:
+  internalIDToNameTable: []
   externalObjects: {}
+  serializedVersion: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+  script: {fileID: 11500000, guid: 804e1ce4c496647cfa3f1a1134187c71, type: 3}
+  _removeEmptyRootObjects: 1
+  _scaleFactor: 1
+  _deduplicateResources: 0
+  _deduplicatedStatistics:
+    meshCountBefore: 0
+    meshCountAfter: 0
+    textureCountBefore: 0
+    textureCountAfter: 0
+  _maximumLod: 300
+  _readWriteEnabled: 1
+  _generateColliders: 0
+  _addColliders: 0
+  _swapUvs: 0
+  _generateLightmapUVs: 0
+  _importBlendShapeNames: 1
+  _blendShapeFrameWeight:
+    _option: 0
+    _multiplier: 1
+  _importNormals: 0
+  _importTangents: 0
+  _importCamera: 2
+  _importAnimations: 2
+  _mecanimHumanoidFlip: 0
+  _addAnimatorComponent: 0
+  _animationLoopTime: 1
+  _animationLoopPose: 0
+  _importMaterials: 1
+  _enableGpuInstancing: 0
+  _texturesReadWriteEnabled: 1
+  _generateMipMaps: 1
+  _useSceneNameIdentifier: 0
+  _textureCompression: -50
+  _gltfAsset: '<b>Generator: </b>THREE.GLTFExporter r184
+
+    <b>Version: </b>2.0
+
+    
+
+    <b>Extras:
+    </b>
+
+'
+  optimizeGameObjects: 0
+  materials:
+  - {fileID: -4590051457655989557, guid: c9efdfdf09dfd324b97f844546ec0af6, type: 3}
+  - {fileID: -3687509472280378584, guid: c9efdfdf09dfd324b97f844546ec0af6, type: 3}
+  - {fileID: 5524136766921093829, guid: c9efdfdf09dfd324b97f844546ec0af6, type: 3}
+  - {fileID: 9171952328373019990, guid: c9efdfdf09dfd324b97f844546ec0af6, type: 3}
+  - {fileID: -5945402096816309425, guid: c9efdfdf09dfd324b97f844546ec0af6, type: 3}
+  - {fileID: 3689615978714520625, guid: c9efdfdf09dfd324b97f844546ec0af6, type: 3}
+  textures: []
+  hasSceneData: 1
+  hasAnimationData: 0
+  hasMaterialData: 1
+  hasTextureData: 0
+  animations: []
+  _extensions:
+  - name: KHR_materials_emissive_strength
+    supported: 1
+    used: 1
+    required: 0
+  _textures: []
+  _mainAssetIdentifier: main asset
+  _importPlugins: []
