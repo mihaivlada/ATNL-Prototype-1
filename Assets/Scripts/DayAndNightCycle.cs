@@ -29,9 +29,10 @@ public class DayAndNightCycle : MonoBehaviour
         timeOfDay += Time.deltaTime / duration;
 
         if (timeOfDay >= 1f)
+
             timeOfDay -= 1f;
 
-        float t = timeOfDay * Mathf.PI * 2f;
+        float t = timeOfDay * Mathf.PI;
 
         float pitch = Mathf.Sin(t) * 45f;
         float yaw = Mathf.Sin(t * 2f) * 60f;
