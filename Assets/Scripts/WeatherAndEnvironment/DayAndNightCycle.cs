@@ -1,42 +1,85 @@
+using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Light))]
 public class DayAndNightCycle : MonoBehaviour
 {
-    [SerializeField] private float dayDuration = 7f;   // 7 minutes
-    [SerializeField] private float nightDuration = 6f; // 6 minutes
+    [SerializeField] private float dayDurationInSeconds;
+    [SerializeField] private float nightDurationInSeconds;
+    [SerializeField] private float lightIntensityTransitionTimeInSeconds;
+    // between 0 and 1
+    [SerializeField] private float dayProgress;
 
-    private float timeOfDay; // 0 to 1, where 0.5 is midnight, 0 is sunrise, 0.25 is noon, 0.75 is sunset
+    private Light light;
+
+    private bool isDay;
+
+    private const int startingAngleOffsetX = 75;
+    private const int startingAngleOffsetY = 75;
+
+    private const float startingAngleX = Mathf.PI / 8;
+    private const float rotationAmplitudeX = 3 * Mathf.PI / 4;
+
+    private const float startingAngleY = 3 * Mathf.PI / 2;
+    private const float rotationAmplitudeY = Mathf.PI;
 
     void Start()
     {
-        timeOfDay = 0.25f;
-        dayDuration = dayDuration * 60f;
-        nightDuration = nightDuration * 60f;
+        dayDurationInSeconds = 8f * 60;
+        nightDurationInSeconds = 7f * 60;
+        lightIntensityTransitionTimeInSeconds = 10f / dayDurationInSeconds;
+
+        // start of the day
+        dayProgress = 0;
+        isDay = true;
+
+        // sped up for testing
+        // remove in the future
+        //dayDurationInSeconds /= 40;
+        //nightDurationInSeconds /= 80;
+
+        light = GetComponent<Light>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        RotateFigureEight();
+        if (isDay) 
+        {
+            dayProgress += Time.deltaTime / dayDurationInSeconds;
+
+            light.intensity = Mathf.Clamp01(
+                Mathf.Min(
+                    dayProgress / lightIntensityTransitionTimeInSeconds,
+                    (1f - dayProgress) / lightIntensityTransitionTimeInSeconds
+                )
+            );
+        }
+
+        // end of the day, resets back to start
+        if (dayProgress >= 1)
+        {
+            dayProgress = 0;
+            isDay = false;
+            light.enabled = false;
+            StartCoroutine(WaitForNightTime());
+        }
+
+        transform.rotation = Quaternion.Euler(
+            startingAngleOffsetX * Mathf.Sin(startingAngleX + (rotationAmplitudeX * dayProgress)), 
+            startingAngleOffsetY * Mathf.Sin(startingAngleY + (rotationAmplitudeY * dayProgress)), 
+            0);
     }
 
-    void RotateFigureEight()
+    IEnumerator WaitForNightTime()
     {
-        bool isDay = timeOfDay >= 0f && timeOfDay < 0.5f;
+        yield return new WaitForSeconds(nightDurationInSeconds);
+        TurnLightOn();
+    }
 
-        float duration = isDay ? dayDuration : nightDuration;
-
-        timeOfDay += Time.deltaTime / duration;
-
-        if (timeOfDay >= 1f)
-
-            timeOfDay -= 1f;
-
-        float t = timeOfDay * Mathf.PI;
-
-        float pitch = Mathf.Sin(t) * 45f;
-        float yaw = Mathf.Sin(t * 2f) * 60f;
-
-        transform.rotation = Quaternion.Euler(pitch, yaw, 0f);
+    void TurnLightOn()
+    {
+        dayProgress = 0;
+        isDay = true;
+        light.enabled = true;
     }
 }
