@@ -3,7 +3,7 @@ using Assets.Scripts.WeatherAndEnvironment.WeatherV2.Events;
 using System;
 using System.Collections.Generic;
 
-namespace Assets.Scripts.WeatherAndEnvironment.WeatherV2.States
+namespace Assets.Scripts.WeatherAndEnvironment.WeatherV2.States.Base
 {
     public abstract class WeatherState : IWeatherState
     {

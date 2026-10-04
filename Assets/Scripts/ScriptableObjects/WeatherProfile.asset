@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: WeatherProfile
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.WeatherAndEnvironment.WeatherV2.Config.WeatherProfileSO
   <Clear>k__BackingField:
-    <Weight>k__BackingField: 50
+    <Weight>k__BackingField: 10
     <CombineChance>k__BackingField: 0
     <Duration>k__BackingField:
-      <Min>k__BackingField: 120
-      <Max>k__BackingField: 300
+      <Min>k__BackingField: 5
+      <Max>k__BackingField: 10
     <TemperatureDropPerSecond>k__BackingField: 0.1
   <Cold>k__BackingField:
     <Weight>k__BackingField: 15
-    <CombineChance>k__BackingField: 0.4
+    <CombineChance>k__BackingField: 0.674
     <Duration>k__BackingField:
-      <Min>k__BackingField: 120
-      <Max>k__BackingField: 300
+      <Min>k__BackingField: 5
+      <Max>k__BackingField: 10
     <Tiers>k__BackingField:
     - <Name>k__BackingField: Tier 1
       <Weight>k__BackingField: 60
@@ -39,8 +39,8 @@ MonoBehaviour:
     <Weight>k__BackingField: 8
     <CombineChance>k__BackingField: 0.3
     <Duration>k__BackingField:
-      <Min>k__BackingField: 120
-      <Max>k__BackingField: 240
+      <Min>k__BackingField: 5
+      <Max>k__BackingField: 10
     <Tiers>k__BackingField:
     - <Name>k__BackingField: Tier 1
       <Weight>k__BackingField: 70
@@ -58,8 +58,8 @@ MonoBehaviour:
     <Weight>k__BackingField: 10
     <CombineChance>k__BackingField: 0.35
     <Duration>k__BackingField:
-      <Min>k__BackingField: 90
-      <Max>k__BackingField: 240
+      <Min>k__BackingField: 5
+      <Max>k__BackingField: 10
     <Tiers>k__BackingField:
     - <Name>k__BackingField: Gusts of Wind
       <Weight>k__BackingField: 50
@@ -88,8 +88,8 @@ MonoBehaviour:
     <Weight>k__BackingField: 7
     <CombineChance>k__BackingField: 0
     <Duration>k__BackingField:
-      <Min>k__BackingField: 90
-      <Max>k__BackingField: 180
+      <Min>k__BackingField: 5
+      <Max>k__BackingField: 10
     <Tiers>k__BackingField:
     - <Name>k__BackingField: Tier 1
       <Weight>k__BackingField: 65
@@ -103,8 +103,8 @@ MonoBehaviour:
     <Weight>k__BackingField: 2
     <CombineChance>k__BackingField: 0
     <Duration>k__BackingField:
-      <Min>k__BackingField: 60
-      <Max>k__BackingField: 120
+      <Min>k__BackingField: 5
+      <Max>k__BackingField: 10
     <TemperatureDropPerSecond>k__BackingField: 0.75
     <MovementSpeedModifier>k__BackingField: -0.25
     <VisibilityReduction>k__BackingField: 0.75
@@ -112,8 +112,8 @@ MonoBehaviour:
     <Weight>k__BackingField: 4
     <CombineChance>k__BackingField: 0.15
     <Duration>k__BackingField:
-      <Min>k__BackingField: 90
-      <Max>k__BackingField: 180
+      <Min>k__BackingField: 5
+      <Max>k__BackingField: 10
     <StrikeInterval>k__BackingField:
       <Min>k__BackingField: 3
       <Max>k__BackingField: 10
@@ -126,8 +126,8 @@ MonoBehaviour:
     <Weight>k__BackingField: 2
     <CombineChance>k__BackingField: 0
     <Duration>k__BackingField:
-      <Min>k__BackingField: 60
-      <Max>k__BackingField: 120
+      <Min>k__BackingField: 5
+      <Max>k__BackingField: 10
     <TemperatureDropPerSecond>k__BackingField: 2
     <AttackSpeedModifier>k__BackingField: -0.15
     <NourishmentDepletionModifier>k__BackingField: 0.25
@@ -136,8 +136,8 @@ MonoBehaviour:
     <Weight>k__BackingField: 2
     <CombineChance>k__BackingField: 0.15
     <Duration>k__BackingField:
-      <Min>k__BackingField: 120
-      <Max>k__BackingField: 240
+      <Min>k__BackingField: 5
+      <Max>k__BackingField: 10
     <LongNightChanceMultiplier>k__BackingField: 3
   <Combinations>k__BackingField:
   - <First>k__BackingField: 1

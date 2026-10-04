@@ -1,9 +1,10 @@
 using Assets.Scripts.WeatherAndEnvironment.WeatherV2.Enums;
 using Assets.Scripts.WeatherAndEnvironment.WeatherV2.Events;
+using Assets.Scripts.WeatherAndEnvironment.WeatherV2.States.Base;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Assets.Scripts.WeatherAndEnvironment.WeatherV2.States
+namespace Assets.Scripts.WeatherAndEnvironment.WeatherV2.States.CombinedWeatherState
 {
     public sealed class CombinedWeatherState : IWeatherState
     {

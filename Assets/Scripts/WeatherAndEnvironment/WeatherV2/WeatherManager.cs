@@ -2,9 +2,11 @@ using Assets.Scripts.WeatherAndEnvironment.WeatherV2.Config;
 using Assets.Scripts.WeatherAndEnvironment.WeatherV2.Enums;
 using Assets.Scripts.WeatherAndEnvironment.WeatherV2.Events;
 using Assets.Scripts.WeatherAndEnvironment.WeatherV2.Selection;
-using Assets.Scripts.WeatherAndEnvironment.WeatherV2.States;
+using Assets.Scripts.WeatherAndEnvironment.WeatherV2.States.CombinedWeatherState;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 namespace Assets.Scripts.WeatherAndEnvironment.WeatherV2
@@ -14,6 +16,36 @@ namespace Assets.Scripts.WeatherAndEnvironment.WeatherV2
         [SerializeField] private WeatherProfileSO profile;
         [SerializeField] private Transform lightningTarget;
         [SerializeField, Min(0.01f)] private float temperatureTickInterval = 0.1f;
+
+
+        #region UI
+
+        [Header("UI FIELDS")]
+        [SerializeField] TextMeshProUGUI WeatherStates;
+        [SerializeField] TextMeshProUGUI Duration;
+        [SerializeField] TextMeshProUGUI RemainingTime;
+
+        [Space]
+        [Header("Effects")]
+        [SerializeField] TextMeshProUGUI TemperatureDropPerSecond;
+        [SerializeField] TextMeshProUGUI MovementSpeedModifier;
+        [SerializeField] TextMeshProUGUI AttackSpeedModifier;
+        [SerializeField] TextMeshProUGUI NourishmentDepletionModifier;
+        [SerializeField] TextMeshProUGUI FatigueDepletionModifier;
+        [SerializeField] TextMeshProUGUI VisibilityReduction;
+
+        [Space]
+        [Header("Wind Info")]
+        [SerializeField] TextMeshProUGUI WindDirection;
+        [SerializeField] TextMeshProUGUI WithWindSpeedModifier;
+        [SerializeField] TextMeshProUGUI AgainstWindSpeedModifier;
+        [SerializeField] TextMeshProUGUI ComesInGusts;
+
+        [Space]
+        [Header("Spawned Enemies")]
+        [SerializeField] TextMeshProUGUI SpawnedEnemies;
+
+        #endregion
 
         private WeatherSelector selector;
         private CombinedWeatherState currentWeather;
@@ -41,6 +73,9 @@ namespace Assets.Scripts.WeatherAndEnvironment.WeatherV2
 
             currentWeather.Tick(deltaTime);
             TickTemperature(deltaTime);
+
+            // UI Updates
+            RemainingTime.text = $"Remaining time: {Math.Floor(currentWeather.RemainingTime)} sec";
 
             if (currentWeather.IsFinished)
             {
@@ -77,6 +112,30 @@ namespace Assets.Scripts.WeatherAndEnvironment.WeatherV2
             currentWeather = nextWeather;
             currentWeather.Enter();
             CurrentWeather = currentWeather.CreateSnapshot();
+
+            // Update UI
+            WeatherStates.text = $"Weather States: {string.Join(" + ", CurrentWeather.Weathers.Select(w => $"{w.Type.ToString()} - Tier {w.Tier}").ToList())}";
+            Duration.text = $"Duration: {CurrentWeather.Duration} sec";
+
+            // Effects
+            TemperatureDropPerSecond.text = $"Temperature drops: {CurrentWeather.Effects.TemperatureDropPerSecond} times per second.";
+            MovementSpeedModifier.text = $"Movement speed modifier: {CurrentWeather.Effects.MovementSpeedModifier}";
+            AttackSpeedModifier.text = $"Attack speed modifier: {CurrentWeather.Effects.AttackSpeedModifier}";
+            NourishmentDepletionModifier.text = $"Nourishment depletion modifier: {CurrentWeather.Effects.NourishmentDepletionModifier}";
+            FatigueDepletionModifier.text = $"Fatigue depletion modifier: {CurrentWeather.Effects.FatigueDepletionModifier}";
+            VisibilityReduction.text = $"Visibility reduction: {CurrentWeather.Effects.VisibilityReduction}";
+
+            // Wind info
+            WindDirection.text = $"Wind direction: {CurrentWeather.Wind.Direction}";
+            WithWindSpeedModifier.text = $"Going with the wind - speed modifier: {CurrentWeather.Wind.WithWindSpeedModifier}";
+            AgainstWindSpeedModifier.text = $"Going against the wind - speed modifier: {CurrentWeather.Wind.AgainstWindSpeedModifier}";
+            ComesInGusts.text = $"Comes in gusts: {CurrentWeather.Wind.ComesInGusts}";
+
+            // Spawned enemies
+            var spawnedText = currentWeather.SpawnedEnemies.Any()
+                ? string.Join(" and ", currentWeather.SpawnedEnemies.Select(se => se.ToString()))
+                : "None";
+            SpawnedEnemies.text = $"Spawned enemies: {spawnedText}";
 
             RaiseWeatherEvents(previousWeather);
         }

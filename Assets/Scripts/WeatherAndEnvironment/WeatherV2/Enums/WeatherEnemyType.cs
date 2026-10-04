@@ -1,8 +1,12 @@
+using System.ComponentModel;
+
 namespace Assets.Scripts.WeatherAndEnvironment.WeatherV2.Enums
 {
     public enum WeatherEnemyType
     {
+        [Description("Fog Dweller")]
         FogDweller,
-        IesserFeihdhar
+        [Description("Lesser Feihdhar")]
+        LesserFeihdhar
     }
 }

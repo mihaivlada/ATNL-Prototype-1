@@ -1,4 +1,5 @@
 using Assets.Scripts.WeatherAndEnvironment.WeatherV2.Enums;
+using Assets.Scripts.WeatherAndEnvironment.WeatherV2.States.Base;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,7 +14,7 @@ namespace Assets.Scripts.WeatherAndEnvironment.WeatherV2.States
             : base(WeatherType.VeilOfDarkness, NoTier, fog.Effects)
         {
             this.fog = fog;
-            spawnedEnemies = fog.SpawnedEnemies.Append(WeatherEnemyType.IesserFeihdhar).ToArray();
+            spawnedEnemies = fog.SpawnedEnemies.Append(WeatherEnemyType.LesserFeihdhar).ToArray();
         }
 
         public int FogTier => fog.Tier;

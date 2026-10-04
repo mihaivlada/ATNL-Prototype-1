@@ -2,7 +2,7 @@ using Assets.Scripts.WeatherAndEnvironment.WeatherV2.Enums;
 using Assets.Scripts.WeatherAndEnvironment.WeatherV2.Events;
 using System.Collections.Generic;
 
-namespace Assets.Scripts.WeatherAndEnvironment.WeatherV2.States
+namespace Assets.Scripts.WeatherAndEnvironment.WeatherV2.States.Base
 {
     public interface IWeatherState
     {

@@ -1,6 +1,6 @@
 using Assets.Scripts.WeatherAndEnvironment.WeatherV2.Config;
 using Assets.Scripts.WeatherAndEnvironment.WeatherV2.Enums;
-using Assets.Scripts.WeatherAndEnvironment.WeatherV2.States;
+using Assets.Scripts.WeatherAndEnvironment.WeatherV2.States.CombinedWeatherState;
 using System;
 using System.Collections.Generic;
 using System.Linq;
