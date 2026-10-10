@@ -16,7 +16,7 @@ public class EnemyIdleState : EnemyState
     {
         base.EnterState();
 
-        _targetPos = GetRandomPointInSphere();
+        _targetPos = GetRandomPointOnGround();
     }
     public override void ExitState()
     {
@@ -26,24 +26,38 @@ public class EnemyIdleState : EnemyState
     {
         base.FrameUpdate();
 
+        if (enemy.IsAggroed)
+        {
+            enemy.StateMachine.ChangeState(enemy.ChaseState);
+        }
+
         _direction = (_targetPos - enemy.transform.position).normalized;
 
         enemy.MoveEnemy(_direction * enemy.RandomMovementSpeed);
 
         if ((enemy.transform.position - _targetPos).sqrMagnitude < 0.1f)
         {
-            _targetPos = GetRandomPointInSphere();
+            _targetPos = GetRandomPointOnGround();
         }
     }
+
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
     }
 
 
-    private Vector3 GetRandomPointInSphere()
+    private Vector3 GetRandomPointOnGround()
     {
-        return enemy.transform.position + (Vector3)UnityEngine.Random.insideUnitCircle * enemy.RandomMovementRange;
+        Vector2 randomPoint2D = UnityEngine.Random.insideUnitCircle * enemy.RandomMovementRange;
+
+        Vector3 currentPos = enemy.transform.position;
+
+        return new Vector3(
+            currentPos.x + randomPoint2D.x, 
+            currentPos.y, 
+            currentPos.z + randomPoint2D.y
+        );
     }
 
 }

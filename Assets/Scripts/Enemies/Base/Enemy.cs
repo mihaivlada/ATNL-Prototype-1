@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable
+public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckable
 {
     [field: SerializeField] public float MaxHealth { get; set; } = 100f;
     public float CurrentHealth { get; set; }
@@ -11,8 +11,10 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable
 
     public EnemyStateMachine StateMachine { get; set; }
     public EnemyIdleState IdleState { get; set; }
-    public EnemyChaseState ChaseState { get; set; } 
+    public EnemyChaseState ChaseState { get; set; }
     public EnemyAttackState AttackState { get; set; }
+    public bool IsAggroed { get; set; }
+    public bool IsWithinStrikingDistance { get; set; }
 
 
     #endregion
@@ -74,7 +76,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable
 
     #region Movement Functions
 
-    public void MoveEnemy(Vector2 velocity)
+    public void MoveEnemy(Vector3 velocity)
     {
         RB.linearVelocity = velocity;
         CheckForLeftOrRightFacing(velocity);
@@ -83,7 +85,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable
     {
         if (velocity.x > 0 && !isFacingRight)
         {
-            Vector3 rotator = new Vector3(transform.rotation.x, 180f , transform.rotation.z);
+            Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(rotator);
             isFacingRight = !isFacingRight;
         }
@@ -91,7 +93,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable
         {
             Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(rotator);
-            isFacingRight = !isFacingRight; 
+            isFacingRight = !isFacingRight;
         }
     }
 
@@ -103,6 +105,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable
     {
         StateMachine.CurrentEnemyState.AnimationTriggerEvent(triggerType);
     }
+    
 
     public enum AnimationTriggerType
     {
@@ -110,5 +113,20 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable
         PlayFootstepSound
     }
 
+    #endregion
+
+
+    #region Distance Checks
+
+    public void SetAggroStatus(bool isAggroed)
+    {
+        IsAggroed = isAggroed;
+    }
+
+    public void SetStrkingDistanceBool(bool isWithinStrikingDistance)
+    {
+        IsWithinStrikingDistance = isWithinStrikingDistance;
+    }
+ 
     #endregion
 }

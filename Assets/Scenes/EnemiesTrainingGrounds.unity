@@ -698,6 +698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 429950102}
   - component: {fileID: 429950103}
+  - component: {fileID: 429950104}
   m_Layer: 0
   m_Name: StrikingDistance
   m_TagString: Untagged
@@ -739,8 +740,21 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 4
+  m_Radius: 6
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &429950104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429950101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b04f909e385f04fa6ea8ed2532a09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStrikingDistanceCheck
+  _enemy: {fileID: 0}
 --- !u!1001 &510480100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2183,7 +2197,7 @@ Transform:
   m_GameObject: {fileID: 1426839311}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.11, y: 1.2, z: -2.74}
+  m_LocalPosition: {x: -5.93, y: 1.2, z: -2.74}
   m_LocalScale: {x: 0.4, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2564,6 +2578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1762724353}
   - component: {fileID: 1762724354}
+  - component: {fileID: 1762724355}
   m_Layer: 0
   m_Name: AggroRadius
   m_TagString: Untagged
@@ -2605,8 +2620,20 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 7
+  m_Radius: 15
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1762724355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762724352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562b645c60c9fd84f80a09e2acf236b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAggroCheck
 --- !u!4 &1771782723 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3918704906701059572, guid: 329a90a544b1c9e4c88eb635c126f3d4,
@@ -3284,10 +3311,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: CapsuleSpritePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 3044686188937941006, guid: 998a41252396da04c87a2c47bd3713d8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4375498617494309592, guid: 998a41252396da04c87a2c47bd3713d8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.58
+      value: 5.54
       objectReference: {fileID: 0}
     - target: {fileID: 4375498617494309592, guid: 998a41252396da04c87a2c47bd3713d8,
         type: 3}
