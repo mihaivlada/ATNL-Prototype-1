@@ -102,10 +102,10 @@ Packages/packages-lock.json linguist-generated
 *.aiff                  lfs
 *.it                    lfs
 *.mod                   lfs
-*.mp3                   lfs
+*.mp3                   
 *.ogg                   lfs
 *.s3m                   lfs
-*.wav                   lfs
+*.wav                   
 *.xm                    lfs
 
 # Video
@@ -125,10 +125,10 @@ Packages/packages-lock.json linguist-generated
 *.gif                   lfs
 *.hdr                   lfs
 *.iff                   lfs
-*.jpeg                  lfs
-*.jpg                   lfs
+*.jpeg                  
+*.jpg                   
 *.pict                  lfs
-*.png                   lfs
+*.png                   
 *.psd                   lfs
 *.tga                   lfs
 *.tif                   lfs
