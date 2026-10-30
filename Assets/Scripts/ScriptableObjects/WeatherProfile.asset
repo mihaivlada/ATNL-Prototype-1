@@ -16,15 +16,15 @@ MonoBehaviour:
     <Weight>k__BackingField: 10
     <CombineChance>k__BackingField: 0
     <Duration>k__BackingField:
-      <Min>k__BackingField: 5
-      <Max>k__BackingField: 10
+      <Min>k__BackingField: 20
+      <Max>k__BackingField: 25
     <TemperatureDropPerSecond>k__BackingField: 0.1
   <Cold>k__BackingField:
     <Weight>k__BackingField: 15
     <CombineChance>k__BackingField: 0.674
     <Duration>k__BackingField:
-      <Min>k__BackingField: 5
-      <Max>k__BackingField: 10
+      <Min>k__BackingField: 20
+      <Max>k__BackingField: 25
     <Tiers>k__BackingField:
     - <Name>k__BackingField: Tier 1
       <Weight>k__BackingField: 60
@@ -39,8 +39,8 @@ MonoBehaviour:
     <Weight>k__BackingField: 8
     <CombineChance>k__BackingField: 0.3
     <Duration>k__BackingField:
-      <Min>k__BackingField: 5
-      <Max>k__BackingField: 10
+      <Min>k__BackingField: 20
+      <Max>k__BackingField: 25
     <Tiers>k__BackingField:
     - <Name>k__BackingField: Tier 1
       <Weight>k__BackingField: 70
@@ -55,26 +55,26 @@ MonoBehaviour:
       <NourishmentDepletionModifier>k__BackingField: 0.35
       <FatigueDepletionModifier>k__BackingField: 0.35
   <Wind>k__BackingField:
-    <Weight>k__BackingField: 10
+    <Weight>k__BackingField: 100
     <CombineChance>k__BackingField: 0.35
     <Duration>k__BackingField:
-      <Min>k__BackingField: 5
-      <Max>k__BackingField: 10
+      <Min>k__BackingField: 20
+      <Max>k__BackingField: 25
     <Tiers>k__BackingField:
     - <Name>k__BackingField: Gusts of Wind
-      <Weight>k__BackingField: 50
+      <Weight>k__BackingField: 98
       <ColdTier>k__BackingField: 0
       <WithWindSpeedModifier>k__BackingField: 0.05
       <AgainstWindSpeedModifier>k__BackingField: -0.05
       <ComesInGusts>k__BackingField: 1
     - <Name>k__BackingField: Continuous Wind
-      <Weight>k__BackingField: 35
+      <Weight>k__BackingField: 1
       <ColdTier>k__BackingField: 1
       <WithWindSpeedModifier>k__BackingField: 0.05
       <AgainstWindSpeedModifier>k__BackingField: -0.05
       <ComesInGusts>k__BackingField: 0
     - <Name>k__BackingField: Heavy Wind
-      <Weight>k__BackingField: 15
+      <Weight>k__BackingField: 1
       <ColdTier>k__BackingField: 2
       <WithWindSpeedModifier>k__BackingField: 0.1
       <AgainstWindSpeedModifier>k__BackingField: -0.15
@@ -85,7 +85,7 @@ MonoBehaviour:
     <GustDuration>k__BackingField: 2
     <GustTemperatureDrop>k__BackingField: 2
   <Fog>k__BackingField:
-    <Weight>k__BackingField: 7
+    <Weight>k__BackingField: 0
     <CombineChance>k__BackingField: 0
     <Duration>k__BackingField:
       <Min>k__BackingField: 5
@@ -100,7 +100,7 @@ MonoBehaviour:
       <VisibilityReduction>k__BackingField: 0.6
       <SpawnsFogDwellers>k__BackingField: 1
   <Blizzard>k__BackingField:
-    <Weight>k__BackingField: 2
+    <Weight>k__BackingField: 0
     <CombineChance>k__BackingField: 0
     <Duration>k__BackingField:
       <Min>k__BackingField: 5
@@ -109,7 +109,7 @@ MonoBehaviour:
     <MovementSpeedModifier>k__BackingField: -0.25
     <VisibilityReduction>k__BackingField: 0.75
   <LightningStorm>k__BackingField:
-    <Weight>k__BackingField: 4
+    <Weight>k__BackingField: 0
     <CombineChance>k__BackingField: 0.15
     <Duration>k__BackingField:
       <Min>k__BackingField: 5
@@ -123,7 +123,7 @@ MonoBehaviour:
     <LightningFiendSpawnChance>k__BackingField: 0.1
     <MarkedDamageBonus>k__BackingField: 0.2
   <GreatFrost>k__BackingField:
-    <Weight>k__BackingField: 2
+    <Weight>k__BackingField: 0
     <CombineChance>k__BackingField: 0
     <Duration>k__BackingField:
       <Min>k__BackingField: 5
@@ -133,7 +133,7 @@ MonoBehaviour:
     <NourishmentDepletionModifier>k__BackingField: 0.25
     <FatigueDepletionModifier>k__BackingField: 0.25
   <VeilOfDarkness>k__BackingField:
-    <Weight>k__BackingField: 2
+    <Weight>k__BackingField: 0
     <CombineChance>k__BackingField: 0.15
     <Duration>k__BackingField:
       <Min>k__BackingField: 5

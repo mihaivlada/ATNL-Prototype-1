@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerView : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI temperatureText;
     private Rigidbody rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,5 +27,10 @@ public class PlayerView : MonoBehaviour
     public void UpdateHealth(int health)
     {
         healthText.text = $"HP: {health}";
+    }
+
+    public void UpdateTemperature(float temperature)
+    {
+        temperatureText.text = $"Temp: {temperature}";
     }
 }

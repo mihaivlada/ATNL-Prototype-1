@@ -1,0 +1,29 @@
+{
+    "combinations":
+    [
+        {
+            "First": "Cold",
+            "Second": "Wind"
+        },
+        {
+            "First": "Cold",
+            "Second": "Snow"
+        },
+        {
+            "First": "Cold",
+            "Second": "LightningStorm"
+        },
+        {
+            "First": "Cold",
+            "Second": "VeilOfDarkness"
+        },
+        {
+            "First": "Snow",
+            "Second": "Wind"
+        },
+        {
+            "First": "Wind",
+            "Second": "LightningStorm"
+        }
+    ]
+}
