@@ -1,8 +1,8 @@
 ﻿using Assets.Scripts.Utilities;
 using Assets.Scripts.WeatherAndEnvironment.Weather.Enums;
 using Assets.Scripts.WeatherAndEnvironment.Weather.Models;
-using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherConfig;
-using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherConfig.StatesSettings;
+using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherSettings;
+using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherSettings.StatesSettings;
 using System;
 using System.Collections.Generic;
 using System.Linq;

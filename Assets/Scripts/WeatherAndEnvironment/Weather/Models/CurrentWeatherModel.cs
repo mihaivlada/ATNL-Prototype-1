@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherConfig.StatesSettings;
+﻿using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherSettings.StatesSettings;
 using System.Collections.Generic;
 using System.Linq;
 

@@ -1,10 +1,10 @@
 ﻿using Assets.Scripts.ConfigClasses;
 using Assets.Scripts.Utilities;
 using Assets.Scripts.WeatherAndEnvironment.Weather.Enums;
-using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherConfig.Base;
+using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherSettings.Base;
 using System;
 
-namespace Assets.Scripts.WeatherAndEnvironment.Weather.WeatherConfig.StatesSettings
+namespace Assets.Scripts.WeatherAndEnvironment.Weather.WeatherSettings.StatesSettings
 {
     [Serializable]
     public class ClearWeatherSettings : BaseStateSettings

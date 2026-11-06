@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace Assets.Scripts.WeatherAndEnvironment.Weather.WeatherConfig.Base
+namespace Assets.Scripts.WeatherAndEnvironment.Weather.WeatherSettings.Base
 {
     [Serializable]
     public class BaseTierSettings

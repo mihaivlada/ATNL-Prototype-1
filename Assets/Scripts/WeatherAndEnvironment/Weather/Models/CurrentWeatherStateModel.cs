@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherConfig.Base;
+﻿using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherSettings.Base;
 
 namespace Assets.Scripts.WeatherAndEnvironment.Weather.Models
 {

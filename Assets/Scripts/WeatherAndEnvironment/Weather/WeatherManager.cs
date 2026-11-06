@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.WeatherAndEnvironment.Weather.Events;
 using Assets.Scripts.WeatherAndEnvironment.Weather.Models;
 using Assets.Scripts.WeatherAndEnvironment.Weather.Selector;
-using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherConfig;
+using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherSettings;
 using System.Collections;
 using System.Linq;
 using TMPro;

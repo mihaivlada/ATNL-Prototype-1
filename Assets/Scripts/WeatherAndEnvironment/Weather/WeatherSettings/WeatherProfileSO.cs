@@ -1,11 +1,11 @@
 ﻿using Assets.Scripts.WeatherAndEnvironment.Weather.Enums;
-using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherConfig.Base;
-using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherConfig.StatesSettings;
+using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherSettings.Base;
+using Assets.Scripts.WeatherAndEnvironment.Weather.WeatherSettings.StatesSettings;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.WeatherAndEnvironment.Weather.WeatherConfig
+namespace Assets.Scripts.WeatherAndEnvironment.Weather.WeatherSettings
 {
     [CreateAssetMenu(fileName = "WeatherProfile", menuName = "Weather/Weather Profile")]
     public class WeatherProfileSO : ScriptableObject
