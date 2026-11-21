@@ -15,7 +15,7 @@ public class PlayerView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void MovePlayer(Vector3 movement)
