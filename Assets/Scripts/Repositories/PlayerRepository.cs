@@ -15,7 +15,7 @@ public class PlayerRepository : IRepository<PlayerModel>
     public PlayerModel Load()
     {
         if (!Exists())
-            return new PlayerModel("Harkyl", 100);
+            return new PlayerModel("Harkyl", 100, 100);
 
         var json = File.ReadAllText(path);
         return JsonUtility.FromJson<PlayerModel>(json);

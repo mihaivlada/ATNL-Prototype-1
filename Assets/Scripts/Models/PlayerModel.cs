@@ -11,10 +11,18 @@ public class PlayerModel
         set { _health = Mathf.Clamp(value, 0, 100); }
     }
 
-    public PlayerModel(string name, int health)
+    private float _temperature;
+    public float Temperature
+    {
+        get { return _temperature; }
+        set { _temperature = Mathf.Clamp(value, 0, 100); }
+    }
+
+    public PlayerModel(string name, int health, float temperature)
     {
         Name = name;
         Health = health;
+        _temperature = temperature;
     }
 
     public void TakeDamage(int damage)
@@ -23,6 +31,15 @@ public class PlayerModel
         if (Health < 0)
         {
             Health = 0;
+        }
+    }
+
+    public void DropTemperature(float temperatureToDrop)
+    {
+        Temperature -= temperatureToDrop;
+        if (Temperature < 0)
+        {
+            Temperature = 0;
         }
     }
 
